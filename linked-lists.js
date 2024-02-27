@@ -52,6 +52,25 @@ class LinkedList {
     this.length++;
   }
 
+  removeAt(index) {
+    if (index < 0 || index > this.length) return;
+    if (index === 0) {
+      this.head = head.next;
+    }
+
+    let current = this.head;
+    let previous;
+    let count = 0;
+    while (count < index) {
+      count++;
+      previous = current;
+      current = current.next;
+    }
+
+    previous.next = current.next;
+    this.length--;
+  }
+
   pop() {
     let current = this.head;
     let previous;
@@ -73,7 +92,8 @@ class LinkedList {
       count++;
       current = current.next;
     }
-    return current;
+    if (!current) return console.log(null);
+    return console.log(current.value);
   }
 
   hasValue(value) {
@@ -145,10 +165,14 @@ ll.toString();
 ll.size();
 // ll.printHead();
 // ll.printTail();
-// ll.atIndex(4);
+ll.atIndex(4);
 ll.pop();
 ll.size();
+ll.toString();
+ll.insertAt(5, 4);
 ll.toString();
 ll.hasValue(4);
 ll.hasValue(19);
 ll.findValue(4);
+ll.removeAt(1);
+ll.toString();
