@@ -32,6 +32,18 @@ class LinkedList {
     this.length++;
   }
 
+  printHead() {
+    console.log(this.head.value);
+  }
+
+  printTail() {
+    let current = this.head;
+    while (current.next) {
+      current = current.next;
+    }
+    console.log(current.value);
+  }
+
   toString() {
     let current = this.head;
     while (current) {
@@ -53,3 +65,5 @@ ll.append(4);
 ll.append(5);
 ll.toString();
 ll.size();
+ll.printHead();
+ll.printTail();
