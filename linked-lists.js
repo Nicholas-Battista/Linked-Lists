@@ -13,7 +13,7 @@ class LinkedList {
 
   preappend(value) {
     this.head = new Node(value, this.head);
-    this.size++;
+    this.length++;
   }
 
   append(value) {
@@ -29,7 +29,7 @@ class LinkedList {
       }
       current.next = node;
     }
-    this.size++;
+    this.length++;
   }
 
   toString() {
@@ -38,6 +38,10 @@ class LinkedList {
       console.log(current.value);
       current = current.next;
     }
+  }
+
+  size() {
+    console.log(this.length);
   }
 }
 
@@ -48,3 +52,4 @@ ll.preappend(1);
 ll.append(4);
 ll.append(5);
 ll.toString();
+ll.size();
