@@ -91,6 +91,21 @@ class LinkedList {
     }
   }
 
+  findValue(value) {
+    let current = this.head;
+    let count = 0;
+    while (count <= this.length) {
+      count++;
+      if (current.value === value) {
+        return console.log(count);
+      }
+      if (current.next == null) {
+        return console.log(null);
+      }
+      current = current.next;
+    }
+  }
+
   printHead() {
     console.log(this.head.value);
   }
@@ -132,3 +147,4 @@ ll.size();
 ll.toString();
 ll.hasValue(4);
 ll.hasValue(19);
+ll.findValue(4);
