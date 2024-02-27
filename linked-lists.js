@@ -117,7 +117,7 @@ class LinkedList {
     while (count <= this.length) {
       count++;
       if (current.value === value) {
-        return console.log(count);
+        return console.log(count - 1);
       }
       if (current.next == null) {
         return console.log(null);
@@ -155,24 +155,4 @@ class LinkedList {
   }
 }
 
-const ll = new LinkedList();
-ll.preappend(3);
-ll.preappend(2);
-ll.preappend(1);
-ll.append(4);
-ll.append(5);
-ll.toString();
-ll.size();
-// ll.printHead();
-// ll.printTail();
-ll.atIndex(4);
-ll.pop();
-ll.size();
-ll.toString();
-ll.insertAt(5, 4);
-ll.toString();
-ll.hasValue(4);
-ll.hasValue(19);
-ll.findValue(4);
-ll.removeAt(0);
-ll.toString();
+export { LinkedList };
