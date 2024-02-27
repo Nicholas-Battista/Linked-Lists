@@ -52,6 +52,19 @@ class LinkedList {
     this.length++;
   }
 
+  atIndex(index) {
+    if (index < 0 || index > this.length) return;
+    if (index === 0) return this.head;
+
+    let current = this.head;
+    let count = 0;
+    while (count < index) {
+      count++;
+      current = current.next;
+    }
+    return current;
+  }
+
   pop() {}
 
   printHead() {
@@ -85,8 +98,8 @@ ll.preappend(2);
 ll.preappend(1);
 ll.append(4);
 ll.append(5);
-ll.insertAt(4, 4);
 ll.toString();
 ll.size();
 ll.printHead();
 ll.printTail();
+ll.atIndex(4);
