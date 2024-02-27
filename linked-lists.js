@@ -55,7 +55,7 @@ class LinkedList {
   removeAt(index) {
     if (index < 0 || index > this.length) return;
     if (index === 0) {
-      this.head = head.next;
+      return (this.head = this.head.next);
     }
 
     let current = this.head;
@@ -174,5 +174,5 @@ ll.toString();
 ll.hasValue(4);
 ll.hasValue(19);
 ll.findValue(4);
-ll.removeAt(1);
+ll.removeAt(0);
 ll.toString();
