@@ -120,12 +120,16 @@ class LinkedList {
 
   toString() {
     let current = this.head;
+    let string = "";
     while (current) {
-      console.log(current.value);
+      string += `( ${current.value} ) -> `;
+      if (current.next === null) {
+        string += "null";
+      }
       current = current.next;
     }
+    console.log(string);
   }
-
   size() {
     console.log(this.length);
   }
