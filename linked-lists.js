@@ -52,6 +52,17 @@ class LinkedList {
     this.length++;
   }
 
+  pop() {
+    let current = this.head;
+    let previous;
+    while (current.next) {
+      previous = current;
+      current = current.next;
+    }
+    previous.next = null;
+    this.length--;
+  }
+
   atIndex(index) {
     if (index < 0 || index > this.length) return;
     if (index === 0) return this.head;
@@ -65,15 +76,19 @@ class LinkedList {
     return current;
   }
 
-  pop() {
+  hasValue(value) {
     let current = this.head;
-    let previous;
-    while (current.next) {
-      previous = current;
+    let count = 0;
+    while (count <= this.length) {
+      count++;
+      if (current.value === value) {
+        return console.log(true);
+      }
+      if (current.next == null) {
+        return console.log(false);
+      }
       current = current.next;
     }
-    previous.next = null;
-    this.length--;
   }
 
   printHead() {
@@ -115,3 +130,5 @@ ll.size();
 ll.pop();
 ll.size();
 ll.toString();
+ll.hasValue(4);
+ll.hasValue(19);
