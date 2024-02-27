@@ -65,7 +65,16 @@ class LinkedList {
     return current;
   }
 
-  pop() {}
+  pop() {
+    let current = this.head;
+    let previous;
+    while (current.next) {
+      previous = current;
+      current = current.next;
+    }
+    previous.next = null;
+    this.length--;
+  }
 
   printHead() {
     console.log(this.head.value);
@@ -100,6 +109,9 @@ ll.append(4);
 ll.append(5);
 ll.toString();
 ll.size();
-ll.printHead();
-ll.printTail();
-ll.atIndex(4);
+// ll.printHead();
+// ll.printTail();
+// ll.atIndex(4);
+ll.pop();
+ll.size();
+ll.toString();
