@@ -32,6 +32,28 @@ class LinkedList {
     this.length++;
   }
 
+  insertAt(value, index) {
+    if (index < 0 || index > this.length) return;
+    if (index === 0) return this.preappend(value);
+
+    const node = new Node(value);
+    let current, previous;
+
+    current = this.head;
+    let count = 0;
+    while (count < index) {
+      count++;
+      previous = current;
+      current = current.next;
+    }
+
+    node.next = current;
+    previous.next = node;
+    this.length++;
+  }
+
+  pop() {}
+
   printHead() {
     console.log(this.head.value);
   }
@@ -63,6 +85,7 @@ ll.preappend(2);
 ll.preappend(1);
 ll.append(4);
 ll.append(5);
+ll.insertAt(4, 4);
 ll.toString();
 ll.size();
 ll.printHead();
